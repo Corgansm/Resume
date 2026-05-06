@@ -190,3 +190,41 @@ footer { text-align: center; padding: 2rem; margin-top: 4rem; color: var(--text-
     .stats-grid { flex-direction: column; gap: 2rem; }
     .contact-link { font-size: 1.1rem; padding: 1rem; flex-direction: column; text-align: center; gap: 0.5rem; }
 }
+
+/* Media Gallery Styles for Projects */
+.media-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.media-gallery.single-media {
+    grid-template-columns: 1fr;
+}
+
+.media-gallery img,
+.media-gallery video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    background-color: var(--bg-base);
+    z-index: 10;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+@media (min-width: 768px) {
+    .media-gallery img,
+    .media-gallery video {
+        max-height: 200px;
+        object-fit: cover;
+    }
+    .media-gallery.single-media img {
+        max-height: 250px;
+        object-fit: cover;
+    }
+}
